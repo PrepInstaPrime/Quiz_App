@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import styles from './Login.module.css'
 import CustomeButton from '../components/CustomeButton'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 export default function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -50,6 +50,9 @@ export default function Login() {
             <input className={styles.input} type="password" placeholder='Password' name='password' onChange={onChangeHandler} value={password} />
             <CustomeButton btnTxt='Login' style={styles.button} handleClick={handleLogin} />
         </form>
+        <p className={styles.registerLink}>
+            Don't have an account? <Link to="/register" className={styles.link}>Register here</Link>
+        </p>
     </div>
   )
 }
